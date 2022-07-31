@@ -32,6 +32,24 @@ body{
   border: .2rem solid black;
   border-radius: 1.5rem;
   background-color: #8ecae6;
+  text-align: right;
+  letter-spacing: .3rem;
+}
+
+.last{
+  padding-right: 1rem;
+  padding-top: .5rem;
+  font-weight: lighter;
+  height: 3rem;
+  font-size: 2rem;
+}
+
+.current {
+  padding-right: 1rem;
+  font-weight: 500;
+  height: 7rem;
+  font-size: 4rem;
+  overflow: auto;
 }
 
 .buttons-wrapper{
@@ -81,5 +99,6 @@ button:active{
 }
 
 .buttons button{
+  /* 45rem - 3rem(gap) */
   width: calc(42rem / 4);
 }
