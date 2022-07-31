@@ -1,0 +1,85 @@
+html{
+  font-size: 62.5%;
+}
+
+body{
+  background-color: #f1faee;
+}
+
+*, *::after, *::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.calc-body{
+  width: 50rem;
+  height: 60rem;
+  border-radius: 1.5rem;
+  border: .2rem solid black;
+  margin: 10rem auto;
+  background-color: #e5e5e5;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  gap: 3rem;
+  align-items: center;
+}
+
+.display{
+  height: 10rem;
+  width: 45rem;
+  border: .2rem solid black;
+  border-radius: 1.5rem;
+  background-color: #8ecae6;
+}
+
+.buttons-wrapper{
+  display: flex;
+  flex-direction: column;
+  height: 45rem;
+  width: 45rem;
+  justify-content: space-between;
+}
+
+.clr-dlt-button{
+  display: flex;
+  height: 5rem;
+  gap: 2rem;
+}
+
+.buttons{
+  display: flex;
+  flex-wrap: wrap;
+  height: 35rem;
+  gap: 1rem;
+}
+
+.clr-btn{
+  flex: 1;
+}
+
+.dlt-btn{
+  flex: 1;
+}
+
+button{
+  text-align: center;
+  font-size: 2rem;
+  cursor: pointer;
+  background-color: #ffffff;
+  border: .2rem solid black;
+  font-weight: 600;
+}
+
+button:hover{
+  background-color: #ffddd2;
+}
+
+button:active{
+  background-color: #ffb5a7;
+}
+
+.buttons button{
+  width: calc(42rem / 4);
+}
