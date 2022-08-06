@@ -4,11 +4,19 @@ const currentScreen = document.querySelector('.current');
 const lastScreen = document.querySelector('.last');
 let equalButton = 0;
 
+window.addEventListener('keydown', appendToScreen);
 buttons.forEach(button => button.addEventListener('click', appendToScreen));
-specialButtons[0].addEventListener('click', clear);
+specialButtons[0].addEventListener('click', clearScreen);
 specialButtons[1].addEventListener('click', backSpace);
 
 function appendToScreen(e) {
+  if (e.type === 'click') {
+    return mouseInput(e);
+  }
+  keyboardInput(e);
+}
+
+function mouseInput(e) {
   switch (e.target.getAttribute('class')) {
     case 'one':
       appendNumber('1');
@@ -72,6 +80,84 @@ function appendToScreen(e) {
 
     case 'dot':
       appendDecimal();
+      break;
+  };
+}
+
+function keyboardInput(e) {
+  switch (e.key) {
+    case '1':
+    appendNumber('1');
+      break;
+
+    case '2':
+      appendNumber('2');
+      break;
+
+    case '3':
+      appendNumber('3');
+      break;
+
+    case '4':
+      appendNumber('4');
+      break;
+
+    case '5':
+      appendNumber('5');
+      break;
+
+    case '6':
+      appendNumber('6');
+      break;
+
+    case '7':
+      appendNumber('7');
+      break;
+
+    case '8':
+      appendNumber('8');
+      break;
+
+    case '9':
+      appendNumber('9');
+      break;
+
+    case '0':
+      appendNumber('0');
+      break;
+
+    case '+':
+      appendOperator('+');
+      break;
+
+    case '-':
+      appendOperator('-');
+      break;
+
+    case '*':
+      appendOperator('*');
+      break;
+
+    case '/':
+      appendOperator('/');
+      break;
+
+    case '=':
+    case 'Enter':
+      calculate();
+      break;
+
+    case '.':
+      appendDecimal();
+      break;
+
+    case 'Backspace':
+      backSpace();
+      break;
+
+    case 'c':
+    case 'C':
+      clearScreen();
       break;
   };
 }
