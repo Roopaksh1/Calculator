@@ -111,7 +111,7 @@ function appendToScreen(e) {
       break;
 
     case 'dot':
-      appendOperator('+');
+      appendDecimal();
       break;
   };
 }
@@ -144,10 +144,10 @@ function calculate() {
     const numbers = str.split(/[+*\-\/]/);
     let temp = 0;
     for (let i = 0; i < operators.length; i++) {
-      temp = operate(numbers[i], numbers[i+1], operators[i]);
-      numbers[i+1] = temp;
+      temp = operate(numbers[i], numbers[i + 1], operators[i]);
+      numbers[i + 1] = temp;
     }
-    result = temp.toString().length > 11 ? temp.toExponential() : temp;
+    result = temp.toString().length > 10 ? temp.toExponential(5) : temp;
     displayResult(result);
   }
 }
@@ -181,4 +181,20 @@ function hasOperator() {
 function changeOperator(op) {
   backSpace();
   currentScreen.textContent += op;
+}
+
+function appendDecimal() {
+  if (hasDecimal()) {
+    return;
+  }
+  currentScreen.textContent += '.';
+}
+
+function hasDecimal() {
+  if (currentScreen.textContent.match(/\.\d*[*+\-\/]/)) {
+    return false;
+  } else if (currentScreen.textContent.match(/\./)){
+    return true;
+  }
+  return false;
 }
