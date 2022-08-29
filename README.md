@@ -15,9 +15,9 @@
 ### Features I Am Working On
 - More operations like square, power
 - Negative numbers
+- 
+## Acknowledgements
 
-## Credits
+- Made as a solution for the Calculator project on [The Odin Project]
 
-#### The Odin Project:
-
-Website : https://www.theodinproject.com Github : https://github.com/TheOdinProject/theodinproject
+[The Odin Project]: <https://www.theodinproject.com>
